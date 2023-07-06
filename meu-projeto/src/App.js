@@ -1,10 +1,12 @@
 import './App.css';
 import HelloWord from './components/HelloWord'
+import Pessoa from "./components/Pessoa"
 
 function App() {
   return (
     <div className="App">
     <HelloWord />
+    <Pessoa nome="Thiago" idade="22" profissao="programador" foto="https://via.placeholder.com/150" />
   </div>
   )
 
