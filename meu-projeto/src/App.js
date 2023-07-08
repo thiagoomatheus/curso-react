@@ -1,10 +1,10 @@
 import './App.css';
-import Form from './components/Form';
+import Condicional from './components/Condicional';
 
 function App() {
   return (
   <div className="App">
-    <Form />
+    <Condicional />
   </div>
   )
 }
