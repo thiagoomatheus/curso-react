@@ -1,8 +1,16 @@
+import Brand from '../components/Brand'
+import Button from '../components/Button'
+import savings from './../images/savings.svg'
+import Styles from '../pages/Home.module.css'
+
 function Home() {
     return (
-        <div>
-
-        </div>
+        <main className={Styles.main}>
+            <h1 className={Styles.mainTitle}>Bem-vindo ao <Brand /></h1>
+            <p className={Styles.mainContent}>Começe a gerenciar seus projetos agora mesmo!</p>
+            <Button />
+            <img className={Styles.mainImage} src={savings} alt='Economize dinheiro com o Costs' />
+        </main>
     )
 }
 

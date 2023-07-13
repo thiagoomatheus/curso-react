@@ -1,7 +1,7 @@
 import logo from '../images/costs_logo.png'
 
 function Logo() {
-    return <div><img src={logo} /></div>
+    return <div><img src={logo} alt='Costs'/></div>
 }
 
 export default Logo
