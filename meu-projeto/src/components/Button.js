@@ -1,10 +1,16 @@
 import { Link } from 'react-router-dom'
 import Styles from './Button.module.css'
 
-function Button() {
+function Button({action}) {
     return (
         <div>
-            <button className={Styles.button}><Link to='/newproject'>Criar projeto</Link></button>
+            {
+                !action ? (
+                    <button className={Styles.button}><Link to='/newproject'>Criar projeto</Link></button>
+                ) : (
+                    <button className={Styles.button}><Link to='/projects'>Criar projeto</Link></button>
+                )
+            }
         </div>
     )
 }

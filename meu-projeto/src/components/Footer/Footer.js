@@ -1,4 +1,4 @@
-import Brand from './Brand'
+import Brand from '../Brand'
 import Styles from './Footer.module.css'
 import Social from "./Social"
 import { MdCopyright } from "react-icons/md";

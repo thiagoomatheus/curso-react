@@ -1,12 +1,12 @@
 .button {
     background: #000;
     border: none;
-    padding: 10px 0
+    padding: 10px 0;
 }
 
 .button a {
     color: #fff;
     text-decoration: none;
     font-size: 1.2em;
-    padding: 20px;
+    padding: 10px 15px;
 }

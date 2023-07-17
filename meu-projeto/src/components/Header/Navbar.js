@@ -6,9 +6,9 @@ function Navbar() {
         <div>
             <ul className={Styles.navbarContainer}>
                 <li><Link to='/'>Home</Link></li>
-                <li><Link to='/projetos'>Projetos</Link></li>
-                <li><Link to='/empresa'>Empresa</Link></li>
-                <li><Link to='/contato'>Contato</Link></li>
+                <li><Link to='/projects'>Projetos</Link></li>
+                <li><Link to='/company'>Empresa</Link></li>
+                <li><Link to='/contact'>Contato</Link></li>
             </ul>
         </div>
     )

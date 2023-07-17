@@ -1,0 +1,18 @@
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+
+.formContainer label {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.formContainer input, select {
+    font-size: 1em;
+    color: gray;
+    padding: 10px;
+}

@@ -1,6 +1,6 @@
 import Logo from './Logo'
 import Navbar from './Navbar'
-import Styles from './../components/Header.module.css'
+import Styles from './Header.module.css'
 
 function Header() {
     return (

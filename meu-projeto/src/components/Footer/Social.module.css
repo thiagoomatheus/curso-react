@@ -2,10 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    column-gap: 30px;
 }
 
 .socialContainer svg {
     color: #fff;
     font-size: 30px;
-    padding: 40px 20px;
 }
