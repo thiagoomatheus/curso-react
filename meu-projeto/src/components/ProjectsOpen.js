@@ -6,20 +6,22 @@ import Styles from './ProjectsOpen.module.css'
 
     const [length, setLength] = useState(localStorage.length)
     
-    let projects = [];
+    let projects = JSON.parse(localStorage.getItem("projects"));
 
-    for (let i = 1; i <= localStorage.length; i++) {
-        projects.push(JSON.parse(localStorage.getItem(i)))
-    }
-    console.log("renderizou");
-    console.log(length);
+    // for (let i = 1; i <= localStorage.length; i++) {
+    //     projects.push(JSON.parse(localStorage.getItem(i)))
+    // }
+    // console.log("renderizou");
+    // console.log(length);
 
     return (
         <div className={Styles.projectsContainer} >
             {
-                projects.length > 0 ? (
+                projects !== null ? (
                     projects.map(({id, name, budget, category}) => (
-                        <Card  id={id} name={name} budget={budget} category={category} setLength={setLength} />
+                        <Card  id={id} name={name} budget={budget} category={category} 
+                        // setLength={setLength} 
+                        />
                 )
                 )
             ) : (

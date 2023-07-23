@@ -10,10 +10,34 @@ function Form() {
     const [budget, setBudget] = useState()
     const [category, setCategory] = useState()
 
-    async function postData(e) {
+    function postData(e) {
         e.preventDefault()
+
+        const getData = localStorage.length
+
         let id = localStorage.length + 1
-        localStorage.setItem(`${id}`, JSON.stringify({id: id, name: name, budget: budget, category: category}));
+
+        if (getData === 0) {
+            let project = [{
+                id: id,
+                name: name,
+                budget: budget, 
+                category: category
+            }]
+            localStorage.setItem("projects", JSON.stringify(project))
+        }
+        else {
+            let projects = JSON.parse(localStorage.getItem("projects"))
+            let project = {
+                id: projects.length + 1,
+                name: name,
+                budget: budget, 
+                category: category
+            }
+            projects.push(project)
+            localStorage.setItem("projects", JSON.stringify(projects))
+        }
+        // localStorage.setItem(`${id}`, JSON.stringify({id: id, name: name, budget: budget, category: category}));
     }
 
     return(
