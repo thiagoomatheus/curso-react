@@ -5,16 +5,24 @@
     height: 220px;
     width: 250px;
     padding: 15px;
-    border: 1px solid gray;
-    color: gray;
+    border: 1px solid #575757;
+    color: #575757;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px hsla(0, 0%, 0%, 0.300);
 }
 
 .cardContainer h2 {
     color: orange;
     background: black;
-    padding: 5px;
+    padding: 7px;
 }
 
 .cardOrcament {
     font-weight: bold;
+}
+
+.cardButtons {
+    display: flex;
+    flex-direction: row;
+    column-gap: 15px;
 }

@@ -1,8 +1,8 @@
-function Input({label, type, placeholder}) {
+function Input({label, type, placeholder, event}) {
     return (
         <div>
             <label>{label}:
-                <input type={type} placeholder={placeholder} />
+                <input type={type} placeholder={placeholder} onChange={(e) => event(e.target.value)} required="required" />
             </label>
         </div>
     )

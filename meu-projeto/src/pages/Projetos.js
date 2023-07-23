@@ -1,13 +1,11 @@
-import Button from '../components/Button'
+import Header from "../components/MainTitleWithButton"
 import ProjectsOpen from '../components/ProjectsOpen'
+import Styles from "./Projetos.module.css"
 
 function Projetos() {
     return (
-        <main>
-            <header>
-                <h1>Meus Projetos</h1>
-                <Button />
-            </header>
+        <main className={Styles.main}>
+            <Header title="Meus Projetos" />
             <ProjectsOpen />
         </main>
     )
