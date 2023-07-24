@@ -4,9 +4,11 @@ import Styles from './ProjectsOpen.module.css'
 
     function ProjectsOpen() {
 
-    const [length, setLength] = useState(localStorage.length)
+    const [projects, setProjects] = useState(JSON.parse(localStorage.getItem("projects")))
+
+    // const [length, setLength] = useState(localStorage.length)
     
-    let projects = JSON.parse(localStorage.getItem("projects"));
+    // let projects = JSON.parse(localStorage.getItem("projects"));
 
     // for (let i = 1; i <= localStorage.length; i++) {
     //     projects.push(JSON.parse(localStorage.getItem(i)))
@@ -17,9 +19,9 @@ import Styles from './ProjectsOpen.module.css'
     return (
         <div className={Styles.projectsContainer} >
             {
-                projects !== null ? (
+                projects !== null && projects.length !== 0 ? (
                     projects.map(({id, name, budget, category}) => (
-                        <Card  id={id} name={name} budget={budget} category={category} 
+                        <Card  id={id} name={name} budget={budget} category={category} projects={projects} setProjects={setProjects} 
                         // setLength={setLength} 
                         />
                 )

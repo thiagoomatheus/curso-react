@@ -1,12 +1,19 @@
 import Styles from './Card.module.css'
 import ButtonWithIcon from './Projects/ButtonWithIcon'
 
-function Card({id, name, budget, category, setLength}) {
+function Card({id, name, budget, category, setLength, projects, setProjects}) {
+
+    // function deleteProject() {
+    //     localStorage.removeItem(id)
+    //     setLength(localStorage.length)
+    // }
 
     function deleteProject() {
-        localStorage.removeItem(id)
-        setLength(localStorage.length)
+        projects = projects.filter(projects => projects.id !== id)
+        localStorage.setItem("projects", JSON.stringify(projects))
+        setProjects(projects)
     }
+
     return (
         <div className={Styles.cardContainer} key={id}>
             <h2>{name}</h2>
