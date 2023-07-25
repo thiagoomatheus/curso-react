@@ -8,7 +8,7 @@ function Home() {
         <main className={Styles.main}>
             <h1 className={Styles.mainTitle}>Bem-vindo ao <Brand /></h1>
             <p className={Styles.mainContent}>Começe a gerenciar seus projetos agora mesmo!</p>
-            <Button />
+            <Button to="/newproject" text="Criar projeto" />
             <img className={Styles.mainImage} src={savings} alt='Economize dinheiro com o Costs' />
         </main>
     )

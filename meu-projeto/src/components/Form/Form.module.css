@@ -16,3 +16,14 @@
     color: gray;
     padding: 10px;
 }
+
+.formContainer input[type=submit] {
+    background: #000;
+    border: none;
+    padding: 10px 0;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+}

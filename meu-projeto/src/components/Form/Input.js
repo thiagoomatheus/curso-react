@@ -1,10 +1,8 @@
-function Input({label, type, placeholder, event}) {
+function Input({label, type, placeholder, value, event, action}) {
     return (
-        <div>
-            <label>{label}:
-                <input type={type} placeholder={placeholder} onChange={(e) => event(e.target.value)} required="required" />
-            </label>
-        </div>
+        <label>{label}
+            <input type={type} value={value} placeholder={placeholder} onChange={(e) => event(e.target.value)} required="required" onClick={action} />
+        </label>
     )
 }
 

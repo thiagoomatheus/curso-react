@@ -18,18 +18,5 @@
         }
       ],
 
-    "projects": [
-        {
-          "id": 1,
-          "name": "Desenvolvimento do novo site",
-          "budget": 1500,
-          "category": "Desenvolvimento"
-        },
-        {
-          "id": 2,
-          "name": "Desenvolvimento do novo site",
-          "budget": 1500,
-          "category": "Desenvolvimento"
-        }
-    ]
+    "projects": []
 }

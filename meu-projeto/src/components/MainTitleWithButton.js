@@ -5,7 +5,7 @@ function MainTitleWithButton({title}) {
     return (
     <header className={Styles.header}>
         <h1>{title}</h1>
-        <Button />
+        <Button to="/newproject" text="Criar Projeto" />
     </header>
     )
 }
