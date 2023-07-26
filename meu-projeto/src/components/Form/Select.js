@@ -7,7 +7,7 @@ function Select({label, event}) {
     return (
         <label>{label}:
             <select onChange={(e) =>  event(e.target.value)} required="required" >
-                <option disabled selected value=''>Selecione uma opção</option>
+                <option disabled selected >Selecione uma opção</option>
                 {options.map(({name, id}) => (
                     <option key={id} value={name}>{name}</option>
                 )

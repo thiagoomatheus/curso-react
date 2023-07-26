@@ -10,38 +10,65 @@ function Form() {
     const [budget, setBudget] = useState()
     const [category, setCategory] = useState()
 
+    let projects = {
+        name: name,
+        budget: budget,
+        cost: 0,
+        category: category,
+        services: []
+    }
+
     const navigate = useNavigate()
 
     function postData(e) {
         e.preventDefault()
 
-        const getData = localStorage.length
-
-        let id = localStorage.length + 1
-
-        if (getData === 0) {
-            let project = [{
-                id: id,
-                name: name,
-                budget: budget, 
-                category: category
-            }]
-            localStorage.setItem("projects", JSON.stringify(project))
-            navigate("/projects")
-        }
-        else {
-            let projects = JSON.parse(localStorage.getItem("projects"))
-            let project = {
-                id: projects.length + 1,
-                name: name,
-                budget: budget, 
-                category: category
-            }
-            projects.push(project)
-            localStorage.setItem("projects", JSON.stringify(projects))
-            navigate("/projects")
-        }
+        fetch("http://localhost:5000/projects", {
+            method: "POST",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(projects)
+        }).then(
+            (data) => {
+                console.log(data);
+                navigate("/projects", {state: {message: "Projeto criado com sucesso", type: "success"}})
+            } 
+        ).catch(
+            (err) => console.log(err)
+        )
     }
+
+    // function postData(e) { // Post com localStorage - Funcionando muito bem!
+    //     e.preventDefault()
+
+    //     const getData = localStorage.length
+
+    //     let id = localStorage.length + 1
+
+    //     if (getData === 0) {
+    //         let project = [{
+    //             id: id,
+    //             name: name,
+    //             budget: budget, 
+    //             category: category
+    //         }]
+    //         localStorage.setItem("projects", JSON.stringify(project))
+    //         navigate("/projects")
+    //     }
+    //     else {
+    //         let projects = JSON.parse(localStorage.getItem("projects"))
+    //         let project = {
+    //             id: projects.length + 1,
+    //             name: name,
+    //             budget: budget, 
+    //             category: category
+    //         }
+    //         projects.push(project)
+    //         localStorage.setItem("projects", JSON.stringify(projects))
+    //         navigate("/projects")
+    //     }
+    // }
 
     return(
         <>
