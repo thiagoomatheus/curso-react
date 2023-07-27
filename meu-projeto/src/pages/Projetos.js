@@ -1,7 +1,7 @@
-import Header from "../components/MainTitleWithButton"
+import Header from "../components/layout/MainTitleWithButton"
 import ProjectsOpen from '../components/Projects/ProjectsOpen'
 import Styles from "./Projetos.module.css"
-import Message from "../components/Message"
+import Message from "../components/layout/Message"
 import { useLocation, useNavigate} from "react-router-dom"
 import { useEffect } from "react"
 

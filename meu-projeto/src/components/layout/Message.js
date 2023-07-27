@@ -13,7 +13,7 @@ function Message({msg, type}) {
 
         setVisible(true)
 
-        // const timer = setTimeout(()=> {
+        // const timer = setTimeout(()=> { // Forma que estava no curso, porém, quando a página era recarregada ele aparecia a mensagem novamente. Optei por fazer um set timeout no projects.
         //     setVisible(false)
         // }, 3000)
 

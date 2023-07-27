@@ -1,8 +1,8 @@
 function Empresa() {
     return (
-        <div>
+        <main>
             <h1>Empresa</h1>
-        </div>
+        </main>
     )
 }
 

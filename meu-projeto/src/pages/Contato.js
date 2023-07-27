@@ -1,8 +1,8 @@
 function Contato() {
     return (
-        <div>
+        <main>
             <h1>Contato</h1>
-        </div>
+        </main>
     )
 }
 

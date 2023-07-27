@@ -32,7 +32,7 @@ function Card({id, name, budget, category, projects, setProjects}) {
         <div className={Styles.cardContainer}>
             <h2>{name}</h2>
             <p className={Styles.cardOrcament}>Orçamento: {budget}</p>
-            <p>{category}</p>
+            <p className={Styles.cardCategory}><span className={`${Styles[category.toLowerCase()]}`}></span>{category}</p>
             <div className={Styles.cardButtons}>
                 <ButtonWithIcon text="Editar" icon='edit' />
                 <ButtonWithIcon text="Delete" icon='delete' action={deleteProject} />

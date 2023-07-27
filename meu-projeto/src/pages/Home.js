@@ -1,5 +1,5 @@
-import Brand from '../components/Brand'
-import Button from '../components/Button'
+import Brand from '../components/layout/Brand'
+import Button from '../components/layout/Button'
 import savings from './../images/savings.svg'
 import Styles from '../pages/Home.module.css'
 

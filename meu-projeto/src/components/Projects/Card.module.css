@@ -21,8 +21,44 @@
     font-weight: bold;
 }
 
+.cardCategory {
+    display: flex;
+    align-items: center;
+}
+
+.cardCategory span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    margin-right: 5px;
+}
+
+.cardCategory .infra {
+    background: #ffaebc;
+}
+
+.cardCategory .desenvolvimento {
+    background: #a0e7e5;
+}
+
+.cardCategory .design {
+    background: #b4f8c8;
+}
+
+.cardCategory .planejamento {
+    background: #fbe7c6;
+}
+
 .cardButtons {
     display: flex;
     flex-direction: row;
     column-gap: 15px;
+}
+
+.cardButtons button:hover {
+    background: #222;
+    color: #ffbb33;
+    transition: 0.5s;
 }
