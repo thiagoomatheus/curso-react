@@ -20,6 +20,8 @@ import Styles from './ProjectsOpen.module.css'
 
     // const [projects, setProjects] = useState(JSON.parse(localStorage.getItem("projects"))) // Com localStorage - funcionando
 
+    console.log("renderizou");
+
     return (
         <div className={Styles.projectsContainer} >
             

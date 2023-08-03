@@ -19,13 +19,16 @@ function Card({id, name, budget, category, projects, setProjects}) {
             headers: {
                 "Content-type": "application/json",
             },
-            body: JSON.stringify(projects)
         })
         .then(() => {
-            setProjects()
+            setProjects(projects.filter(projects => projects.id !== id))
             navigate("/projects", {state: {message: "Projeto removido com sucesso", type: "error"}})
         })
         .catch((err) => console.log(err))
+    }
+
+    function editProjects() {
+        navigate(`/projects/${id}`)
     }
 
     return (
@@ -34,7 +37,7 @@ function Card({id, name, budget, category, projects, setProjects}) {
             <p className={Styles.cardOrcament}>Orçamento: {budget}</p>
             <p className={Styles.cardCategory}><span className={`${Styles[category.toLowerCase()]}`}></span>{category}</p>
             <div className={Styles.cardButtons}>
-                <ButtonWithIcon text="Editar" icon='edit' />
+                <ButtonWithIcon text="Editar" icon='edit' action={editProjects} />
                 <ButtonWithIcon text="Delete" icon='delete' action={deleteProject} />
             </div>
         </div>

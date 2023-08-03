@@ -1,10 +1,13 @@
 .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: #222;
     border: none;
     padding: 10px 15px;
-    color: #fff;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1em;
+    min-width: 70px;
 }
 
 .button:hover {

@@ -1,4 +1,4 @@
-import Header from "../components/layout/MainTitleWithButton"
+import MainTitleWithButton from "../components/layout/MainTitleWithButton"
 import ProjectsOpen from '../components/Projects/ProjectsOpen'
 import Styles from "./Projetos.module.css"
 import Message from "../components/layout/Message"
@@ -6,6 +6,7 @@ import { useLocation, useNavigate} from "react-router-dom"
 import { useEffect } from "react"
 
 function Projetos() {
+    
 
     const location = useLocation()
     const navigate = useNavigate()
@@ -17,17 +18,18 @@ function Projetos() {
     }
 
     useEffect(() => {
-        const timer = setTimeout(()=> {
-            navigate(location.state, {})
-            console.log(location.state);
-        }, 3000)
-        
-        return () => clearTimeout(timer)
+        if (location.state) {
+            const timer = setTimeout(()=> {
+                navigate(location.state, {})
+            }, 3000)
+            
+            return () => clearTimeout(timer)
+        }
     })
 
     return (
         <main className={Styles.main}>
-            <Header title="Meus Projetos" />
+            <MainTitleWithButton title="Meus Projetos" to="/newproject" btnText="Criar Projeto" />
             {message && <Message msg={message} type={type} />}
             <ProjectsOpen />
         </main>

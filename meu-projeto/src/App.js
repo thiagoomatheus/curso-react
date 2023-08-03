@@ -6,6 +6,7 @@ import Empresa from './pages/Empresa'
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import NewProject from './pages/NewProject';
+import Projeto from "./pages/Projeto";
 
 function App() {
 
@@ -14,10 +15,11 @@ function App() {
       <Header />
       <Routes>
           <Route exact path='/' element={ <Home />} />
-          <Route exact path='/projects' element={ <Projetos />} />
-          <Route exact path='/company' element={ <Empresa />} />
-          <Route exact path='/contact' element={ <Contato />} />
-          <Route exact path='/newproject' element={ <NewProject />} />
+          <Route path='/projects' element={ <Projetos />} />
+          <Route path='/company' element={ <Empresa />} />
+          <Route path='/contact' element={ <Contato />} />
+          <Route path='/newproject' element={ <NewProject />} />
+          <Route path='/projects/:id' element={ <Projeto />} />
       </Routes>
       <Footer />
     </Router>

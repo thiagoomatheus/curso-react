@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
 import Styles from './Button.module.css'
 
-function Button({to, text}) {
+function Button({to, text, handleClick}) {
     return (
-        <div>
-            <Link className={Styles.button} to={to}>{text}</Link>
+        <div className={Styles.button}>
+            <Link  to={to} onClick={handleClick}>{text}</Link>
         </div>
     )
 }

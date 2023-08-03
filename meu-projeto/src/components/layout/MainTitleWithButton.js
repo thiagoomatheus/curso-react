@@ -1,11 +1,19 @@
 import Button from "./Button"
 import Styles from "./MainTitleWithButton.module.css"
 
-function MainTitleWithButton({title}) {
+function MainTitleWithButton({title, to, btnText, action}) {
+
+    function handleClick() {
+        if (action) {
+            action()
+            return
+        }
+    }
+
     return (
     <header className={Styles.header}>
         <h1>{title}</h1>
-        <Button to="/newproject" text="Criar Projeto" />
+        <Button to={to} text={btnText} handleClick={handleClick} />
     </header>
     )
 }

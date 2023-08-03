@@ -1,14 +1,14 @@
-import { useNavigate } from "react-router-dom"
 import Input from "./Input"
 import Select from "./Select"
 import Styles from "./Form.module.css"
 import { useState } from "react"
 
-function Form() {
+function Form({btnText, project, action}) {
 
     const [name, setName] = useState()
     const [budget, setBudget] = useState()
     const [category, setCategory] = useState()
+
 
     let projects = {
         name: name,
@@ -18,26 +18,20 @@ function Form() {
         services: []
     }
 
-    const navigate = useNavigate()
-
-    function postData(e) {
+    function handleSubmit(e) {
         e.preventDefault()
-
-        fetch("http://localhost:5000/projects", {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json",
-            },
-            body: JSON.stringify(projects)
-        }).then(
-            (data) => {
-                console.log(data);
-                navigate("/projects", {state: {message: "Projeto criado com sucesso", type: "success"}})
-            } 
-        ).catch(
-            (err) => console.log(err)
-        )
+        action(projects)
     }
+
+    // function postData(e) {
+    //     e.preventDefault()
+    //     action(projects)
+    // }
+
+    // function editData(e) {
+    //     e.preventDefault()
+    //     action(projects)
+    // }
 
     // function postData(e) { // Post com localStorage - Funcionando muito bem!
     //     e.preventDefault()
@@ -72,11 +66,11 @@ function Form() {
 
     return(
         <>
-            <form className={Styles.formContainer} onSubmit={postData}>
-                <Input label='Nome do projeto' type='text' placeholder='Insira o nome de um projeto' event={setName} />
-                <Input label='Orçamento do projeto' type='number' placeholder='Insira o orçamento total' event={setBudget} />
-                <Select label='Selecione a categoria' event={setCategory} />
-                <Input type="submit" value="Criar projeto"  />
+            <form className={Styles.formContainer} onSubmit={handleSubmit}>
+                <Input label='Nome do projeto' defaultValue={project ? project.name : null } type='text' placeholder='Insira o nome de um projeto' event={setName} />
+                <Input label='Orçamento do projeto' defaultValue={project ? project.budget : null } type='number' placeholder='Insira o orçamento total' event={setBudget} />
+                <Select label='Selecione a categoria' defaultValue={project ? project.category : null } event={setCategory} />
+                <Input type="submit" value={btnText} />
             </form>
         </>
     )
