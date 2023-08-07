@@ -19,28 +19,12 @@
   ],
   "projects": [
     {
-      "name": "teste",
-      "budget": "1",
-      "cost": 0,
-      "category": "Infra",
-      "services": [],
-      "id": 1
-    },
-    {
-      "name": "teste2",
-      "budget": "2",
-      "cost": 0,
-      "category": "Planejamento",
-      "services": [],
-      "id": 2
-    },
-    {
-      "name": "teste3",
-      "budget": "3",
+      "name": "projeto 1",
+      "budget": "1000",
       "cost": 0,
       "category": "Design",
       "services": [],
-      "id": 3
+      "id": 1
     }
   ]
 }

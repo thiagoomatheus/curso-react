@@ -3,12 +3,11 @@ import Select from "./Select"
 import Styles from "./Form.module.css"
 import { useState } from "react"
 
-function Form({btnText, project, action}) {
+function ProjectForm({btnText, project, action}) {
 
     const [name, setName] = useState()
     const [budget, setBudget] = useState()
     const [category, setCategory] = useState()
-
 
     let projects = {
         name: name,
@@ -76,4 +75,4 @@ function Form({btnText, project, action}) {
     )
 }
 
-export default Form
+export default ProjectForm
