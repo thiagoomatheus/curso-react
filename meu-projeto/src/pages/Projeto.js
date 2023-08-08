@@ -6,6 +6,8 @@ import ProjectForm from "../components/Form/ProjectForm"
 import ServiceForm from "../components/Form/ServiceForm"
 import Message from "../components/layout/Message"
 import Styles from "./Projeto.module.css"
+import styleContainer from "../components/Projects/ProjectsOpen.module.css"
+import ServiceCard from "../components/layout/ServiceCard"
 
 function Projeto() {
 
@@ -102,9 +104,29 @@ function Projeto() {
             (err) => console.log(err)
         )
     }
-    console.log(projects);
 
-    console.log("Renderizou");
+    function removeService(id, cost) {
+        const servicesUpdate = projects.services.filter((service) => service.id !== id)
+        const projectUpdate = projects
+        projectUpdate.services = servicesUpdate
+        projectUpdate.cost = parseFloat(projectUpdate.cost) - parseFloat(cost)
+        
+        fetch(`http://localhost:5000/projects/${projectUpdate.id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-type": "application/json",
+            },
+            body: JSON.stringify(projectUpdate)
+        }).then((resp) => resp.json()
+        ).then(
+            (data) => {
+                setProjects(projectUpdate);
+                navigate(`/projects/${projectUpdate.id}`, { state: { message: "Serviço removido com sucesso", type: "error" } })
+            }
+        ).catch(
+            (err) => console.log(err)
+        )
+    }
 
     return (
         <main className={Styles.main}>
@@ -131,25 +153,15 @@ function Projeto() {
                                 {showService ? (
                                     <>
                                         {projects.services && (
-                                            <>
+                                            <div className={styleContainer.projectsContainer}>
                                                 {projects.services.length ? (
-                                                    projects.services.map(({ service, cost, description }) => (
-                                                        <div className={Styles.container} key={projects.services.length + 1}>
-                                                            <p>
-                                                                <span>Nome do serviço:</span> {service}
-                                                            </p>
-                                                            <p>
-                                                                <span>Custo do serviço:</span> {cost}
-                                                            </p>
-                                                            <p>
-                                                                <span>Descrição do serviço:</span> {description}
-                                                            </p>
-                                                        </div>
+                                                    projects.services.map(({ service, cost, description, id }) => (
+                                                        <ServiceCard service={service} cost={cost} description={description} id={id} handleRemove={removeService} key={id} />
                                                     ))
                                                 ) : (
                                                     <p>Adicione um serviço</p>
                                                 )}
-                                            </>
+                                            </div>
                                         )}
                                     </>
                                 ) : (

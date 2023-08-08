@@ -14,7 +14,7 @@ function ButtonWithIcon({text, icon, action}) {
 
     return (
         <>
-            <button className={Styles.button} onClick={action}>{setIcon(icon)}<span>{text}</span></button>
+            <button className={Styles.button} onClick={action}>{setIcon(icon)}{text}</button>
         </>
     )
 }

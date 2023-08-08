@@ -12,9 +12,9 @@ function ProjectForm({btnText, project, action}) {
     let projects = {
         name: name,
         budget: budget,
-        cost: 0,
+        cost: project ? project.cost : 0,
         category: category,
-        services: []
+        services: project ? project.services : []
     }
 
     function handleSubmit(e) {

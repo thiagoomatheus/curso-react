@@ -12,6 +12,7 @@ function ServiceForm({ btnText, project, action }) {
     const navigate = useNavigate()
 
     let services = {
+        id: project.services.length + 1,
         service: service,
         cost: cost,
         description: description

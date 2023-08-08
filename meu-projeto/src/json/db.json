@@ -17,14 +17,5 @@
       "name": "Planejamento"
     }
   ],
-  "projects": [
-    {
-      "name": "projeto 1",
-      "budget": "1000",
-      "cost": 0,
-      "category": "Design",
-      "services": [],
-      "id": 1
-    }
-  ]
+  "projects": []
 }

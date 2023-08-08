@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    height: 220px;
+    min-height: 220px;
     width: 250px;
     padding: 15px;
     border: 1px solid #575757;
@@ -13,11 +13,11 @@
 
 .cardContainer h2 {
     color: orange;
-    background: black;
+    background: #222;
     padding: 7px;
 }
 
-.cardOrcament {
+.cardContainer span {
     font-weight: bold;
 }
 
@@ -57,7 +57,7 @@
     column-gap: 15px;
 }
 
-.cardButtons button:hover {
+button:hover {
     background: #222;
     color: #ffbb33;
     transition: 0.5s;
