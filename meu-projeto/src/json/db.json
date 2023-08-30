@@ -17,5 +17,21 @@
       "name": "Planejamento"
     }
   ],
-  "projects": []
+  "projects": [
+    {
+      "name": "Devto",
+      "budget": "1000",
+      "cost": 50,
+      "category": "Desenvolvimento",
+      "services": [
+        {
+          "id": 1,
+          "service": "Logo para site",
+          "cost": "50",
+          "description": "Contratação de profissional para criação de logo"
+        }
+      ],
+      "id": 1
+    }
+  ]
 }
