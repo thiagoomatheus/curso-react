@@ -1,0 +1,13 @@
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 30px;
+    padding: 40px 0;
+    background: black;
+}
+
+.copy {
+    color: #fff;
+}

@@ -1,0 +1,14 @@
+.navbarContainer{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+}
+
+.navbarContainer a{
+    color: #fff;
+}
+
+.navbarContainer a:hover {
+    color: #fb3;
+}

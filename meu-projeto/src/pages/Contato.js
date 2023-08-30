@@ -1,9 +1,8 @@
-function Contato({nome}) {
+function Contato() {
     return (
-        <div>
+        <main>
             <h1>Contato</h1>
-            <p>Olá {nome}, seja bem vindo!</p>
-        </div>
+        </main>
     )
 }
 

@@ -1,9 +1,8 @@
-function Empresa({ nome }) {
+function Empresa() {
     return (
-        <div>
+        <main>
             <h1>Empresa</h1>
-            <p>Olá {nome}, seja bem vindo!</p>
-        </div>
+        </main>
     )
 }
 

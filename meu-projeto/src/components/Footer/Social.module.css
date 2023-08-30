@@ -1,0 +1,11 @@
+.socialContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 30px;
+}
+
+.socialContainer svg {
+    color: #fff;
+    font-size: 30px;
+}
